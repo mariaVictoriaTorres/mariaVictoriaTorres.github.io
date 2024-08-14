@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Íkualo ui-kit</title>
+
+		<style>
+			#app {
+				background-color: #f2f2f297;
+				padding: 32px;
+			}
+		</style>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/toolbar/prism-toolbar.min.js"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/toolbar/prism-toolbar.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<ik-input-text
+				id="inpt"
+				placeholder="Placeholder"
+				label="Label"
+				value="Valor"
+				helper="Texto de ayuda"
+			></ik-input-text>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-input-text 
+      id="inpt" 
+      placeholder="Placeholder" 
+      label="Label" 
+      value="Valor"
+      oninput="function(event)" 
+      helper="Texto de ayuda"/&gt;
+      </code></pre>
+			<ik-input-email
+				id="email"
+				placeholder="Placeholder"
+				label="Correo electrónico"
+				value="mail@mail.com"
+				oninput="prueba(event)"
+				msgerror="Fomato invalido correo"
+				helper="Texto de ayuda correo"
+			></ik-input-email>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-input-email 
+      id="email" 
+      placeholder="Placeholder" 
+      label="Correo electrónico" 
+      value="mail@mail.com"
+      oninput="function(event.target.invalid)" 
+      msgerror="Fomato invalido correo" 
+      helper="Texto de ayuda correo"/&gt;
+</code></pre>
+			<ik-btn-contained label="Botón" disabled="false"></ik-btn-contained>
+			<pre><code  class="language-html">
+      &lt;ik-btn-contained 
+      onclick="function()"  
+      label="Botón"
+      class="css-class" 
+      disabled="false"/&gt;
+</code></pre>
+			<br />
+			<ik-btn-outlined label="Botón" disabled="false"></ik-btn-outlined>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-btn-outlined 
+      label="Botón" 
+      class="css-class"
+      onclick="function()" 
+      disabled="false"/&gt;
+</code></pre>
+			<br />
+			<ik-card>
+				<ik-text
+					type="title"
+					fontstyle="light"
+					size="l"
+					color="bold"
+					text="Title xxl primary"
+				></ik-text>
+			</ik-card>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-card 
+      class="css-class"&gt;
+      &lt;ik-text type="title" fontstyle="light" size="l" color="bold" text="Title xxl primary"&gt;&lt;/ik-text&gt;
+      &lt;/ik-card&gt;
+</code></pre>
+			<ik-modal header="Titulo del modal" type="error" show="false">
+				Contenido del modal
+				<ik-btn-contained label="Botón" disabled="false"></ik-btn-contained>
+			</ik-modal>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-modal 
+      header="Titulo del modal" 
+	  type="error|success|warning|info|"""
+      show="false"&gt;
+			Contenido del modal
+				&lt;ik-btn-contained label="Botón" disabled="false"&gt;&lt;/ik-btn-contained&gt;
+			&lt;/ik-modal&gt;
+</code></pre>
+
+			<ik-text type="title" fontstyle="light" size="xxl" color="bold"
+				>Title xxl primary</ik-text
+			>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-text
+        type="title|text"
+        fontstyle="light|light-italic|bold|bold-italic|extra-bold|extra-bold-italic|medium|medium-italic|regular|semi-bold|semi-bold-italic"
+        size="xxl|xl|l|m|s|xs"
+        color="primary|secondary|tertiary|black|white|dark-grey|medium-grey|light-grey|grey"
+        &gt;Text... &lt;/ik-text&gt;
+      </code></pre>
+			<br />
+			<ik-otp
+				header="Ingresa el código de validación"
+				description="Para poder ingresar al portal, ingresa el código de 6 digítos que enviamos a tu correo electrónico"
+				channel="maria@mail.coom"
+				otplength="4"
+				helper="Texto de ayuda"
+				error="false"
+				seconds="10"
+				txtresend="Reenviar código"
+				help="¿No recibiste el código?"
+				onclick="prueba(event)"
+				msgError="Ha ocurrido un error"
+			></ik-otp>
+			<br />
+			<pre><code  class="language-html">
+      &lt;ik-otp 
+      header="Ingresa el código de validación" 
+      description="Para poder ingresar al portal, ingresa el código de 6 digítos que enviamos a tu correo electrónico"
+      channel="maria@mail.coom"
+      otplength="4"
+      helper="Texto de ayuda"
+      error="true"
+	  seconds="60"
+	  onclick="prueba(event.target.action=="resend"|event.target.action=="help")"
+	  txtresend="Reenviar código"
+	  help="¿No recibiste el código?"
+      msgError="Ha ocurrido un error"/&gt;
+      </code></pre>
+	  <ik-alert 
+	  header="Titulo del alert"
+	  type="success"
+	  >
+	  			<ik-text
+				type="text"
+				fontstyle="regular"
+				size="s"
+				color="grey"
+				>
+				Este es un texto de prueba
+				<ik-text
+				type="text"
+				fontstyle="semi-bold"
+				size="s"
+				color="grey"
+				>esta es la continuacion del texto
+				</ik-text> 
+			</ik-text>
+		</ik-alert>
+					<pre><code  class="language-html">
+      &lt;ik-alert 
+	  header="Titulo del alert"
+	  type="success | error | warning | info"
+	  &gt;
+	  			&lt;ik-text
+				type="text"
+				fontstyle="regular"
+				size="s"
+				color="grey"
+				&gt;
+				Este es un texto de prueba
+				&lt;ik-text
+				type="text"
+				fontstyle="semi-bold"
+				size="s"
+				color="grey"
+				&gt;esta es la continuacion del texto
+				&lt;/ik-text&gt; 
+			&lt;/ik-text&gt;
+		&lt;/ik-alert&gt;
+      </code></pre>
+
+	  <ik-text
+        type="text"
+        fontstyle="extra-bold"
+        size="l"
+        color="primary"
+        >Text... </ik-text>
+		</div>
+
+		<script>
+			function prueba(event) {
+				console.log('prueba', event.target.action);
+			}
+		</script>
+		<script type="module" src="/src/index.ts"></script>
+		<script>
+			Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
+				var button = document.createElement('button');
+				button.innerHTML = 'Copy';
+				button.addEventListener('click', function () {
+					var code = env.element.textContent;
+					navigator.clipboard.writeText(code).then(function () {
+						button.innerHTML = 'Copied!';
+						setTimeout(function () {
+							button.innerHTML = 'Copy';
+						}, 2000);
+					});
+				});
+				return button;
+			});
+		</script>
+		<script>
+			let showModal = false;
+		</script>
+	</body>
+</html>
